@@ -14,11 +14,19 @@
 
         public function loadPublicKey()
         {
+            if (!file_exists(self::PUBLIC_KEY)) {
+                $this->generateKeys();
+            }
+
             return file_get_contents(self::PUBLIC_KEY);
         }
 
         private function loadPrivateKey()
         {
+            if (!file_exists(self::PRIVATE_KEY)) {
+                $this->generateKeys();
+            }
+
             return file_get_contents(self::PRIVATE_KEY);
         }
 
