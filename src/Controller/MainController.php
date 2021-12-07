@@ -21,7 +21,7 @@
         /**
          * @throws Exception
          */
-        #[Route('/verify/{key?}', name: 'verifyKey')]
+        /*#[Route('/verify/{key?}', name: 'verifyKey')]
         public function verifyKey(KeyManagement $keyManagement, $key): Response
         {
             if (!$key) {
@@ -29,7 +29,7 @@
             }
 
             return $this->json($keyManagement->decode($key));
-        }
+        }*/
 
         /**
          * @throws Exception
@@ -42,7 +42,7 @@
             }
 
             return $this->json([
-                'key' => $keyManagement->encode(json_decode($payload))
+                'token' => $keyManagement->encode(json_decode($payload))
             ]);
         }
     }

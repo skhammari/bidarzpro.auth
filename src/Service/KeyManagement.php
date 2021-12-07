@@ -21,7 +21,7 @@
             return file_get_contents(self::PUBLIC_KEY);
         }
 
-        private function loadPrivateKey()
+        private function loadPrivateKey(): bool|string
         {
             if (!file_exists(self::PRIVATE_KEY)) {
                 $this->generateKeys();
